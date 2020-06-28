@@ -1,8 +1,8 @@
-# No-Limits-Threads-Running-for-MPI-Processes-Fargo-Example
+# No-Limits-CPU-Running-for-MPI-Processes-Fargo-Example
 
-If you have many thread (8,16 or more) and MPI limits the number you want to use. Calling a short .txt file you can use  unlimits threads.
+If you have many CPU (8,16 or more) and MPI limits the number you want to use. Calling a short .txt file you can use  unlimits CPU.
 
-I have 8 treads in my notebook, and I want run Fargo-ADSG using "mpirun" with 6 threads but ..
+I have 8 CPU in my notebook, and I want run Fargo-ADSG using "mpirun" with 6 CPU but ..
 
 Error menssage:
 
@@ -25,4 +25,17 @@ hostfile.txt:
 localhost slots=7
 ```
 
-write the numer of thread limits that you want use. 
+write the numer of CPU limits that you want use. you can know the number of CPU with
+
+
+```sh
+lscpu
+```
+
+Finally, call "--hostfile" and then /../hostfile.txt. (Isuggest save the file in the same folder than fargo)
+```sh
+[name_user@name_computer FargoADSG]$ mpirun -np 6 --hostfile /directory/of/hostfile/hostfile.txt ./fargo -m /directory/of/the/par/file/adsg.par 
+```
+
+#### Make sure don't use the maximum number of CPUs, left 1 or 2 free for another tasks in your pc.
+
