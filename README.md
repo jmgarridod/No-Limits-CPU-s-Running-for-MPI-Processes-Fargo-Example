@@ -25,14 +25,14 @@ hostfile.txt:
 localhost slots=7
 ```
 
-write the numer of CPU limits that you want use. you can know the number of CPU with
+write the number of CPU limits that you want use. you can know the number of CPU with
 
 
 ```sh
 lscpu
 ```
 
-Finally, call "--hostfile" and then /../hostfile.txt. (Isuggest save the file in the same folder than fargo)
+Finally, call "--hostfile" and then /../hostfile.txt. (I suggest save the file in the same folder than fargo)
 ```sh
 [name_user@name_computer FargoADSG]$ mpirun -np 6 --hostfile /directory/of/hostfile/hostfile.txt ./fargo -m /directory/of/the/par/file/adsg.par 
 ```
